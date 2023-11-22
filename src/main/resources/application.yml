@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: consulDemo
+  cloud:
+    consul:
+      discovery:
+        tags: dev
+        # 服务发现过滤的tag
+        default-query-tag: dev
+        instance-id: custom-service-id
+        serviceName: ${spring.application.name}
+        hostname: 10.11.73.10
+      #        health-check-url:
+      host: localhost
+      port: 8500
+  profiles:
+    active: dev

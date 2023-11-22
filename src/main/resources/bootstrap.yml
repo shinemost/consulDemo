@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: consulDemo
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      enabled: true
+      config:
+        watch:
+          enabled: true # 是否配置更新观察
+          delay: 10000
+          wait-time: 30
+        format: YAML # 这个属性指定了 配置在consul的读取方式，
+        data-key: consulDemo
+        enabled: true
+        prefixes: config
+        default-context: consul-config
