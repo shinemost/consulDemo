@@ -1,6 +1,6 @@
 spring:
   application:
-    name: consulDemoPayment
+    name: consulDemoOrder
   cloud:
     consul:
       host: localhost

@@ -1,10 +1,12 @@
-package com.example.consuldemo;
+package com.example.consuldemo.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
+@RestController
 public class PaymentController {
 
     @Value("${server.port}")
@@ -12,6 +14,6 @@ public class PaymentController {
 
     @GetMapping(value = "/payment/cs")
     public String paymentConsul() {
-        return "SpringCloud with consul: " + serverPort + "\t" + UUID.randomUUID();
+        return "SpringCloud with consul: " + serverPort+ "\t" + UUID.randomUUID();
     }
 }
