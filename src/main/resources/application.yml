@@ -9,7 +9,7 @@ spring:
 #        default-query-tag: dev
         instance-id: payment-1
         serviceName: ${spring.application.name}
-        hostname: 10.11.73.10
+        hostname: localhost
 #        heartbeat:
 #          enabled: true
 
