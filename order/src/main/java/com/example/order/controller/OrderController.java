@@ -28,7 +28,7 @@ public class OrderController {
     private RestTemplate restTemplate;
 
     @RequestMapping(value = "/comsumer/payment/cs")
-    public String paymentInfo2() {
+    public String paymentInfo() {
         return restTemplate.getForObject(PAYMENT_SERVICE + "/payment/cs", String.class);
     }
 
@@ -36,6 +36,8 @@ public class OrderController {
     public Object getServices(){
 
         List<ServiceInstance> instances = discoveryClient.getInstances("consulDemoPayment");
+        List<String> services = discoveryClient.getServices();
+        services.forEach(System.out::println);
         System.out.println(instances.toString());
         return instances;
     }

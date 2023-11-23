@@ -4,13 +4,13 @@ spring:
   cloud:
     consul:
       discovery:
-        tags: dev
+#        tags: dev
         # 服务发现过滤的tag
 #        default-query-tag: dev
         instance-id: ${spring.application.name}
         serviceName: ${spring.application.name}
-#        hostname: localhost
-      #        health-check-url:
+        hostname: localhost
+        health-check-url: http://10.11.73.10:8030/actuator/health
       host: localhost
       port: 8500
   profiles:
